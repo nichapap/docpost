@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'emptyScreen.dart';
+import 'empty_screen.dart';
+import 'login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,6 +43,19 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_alert),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const LoginPage(title: 'login')),
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
