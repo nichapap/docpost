@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'emptyScreen.dart';
+import 'contacts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final screens = [
     const EmptyScreen(title: 'EmptyScreen'),
-    const EmptyScreen(title: 'EmptyScreen'),
+    const Contacts(),
   ];
 
   @override
@@ -43,11 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-      ),
+      body: screens[_currentIndex],
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Increment',
