@@ -1,3 +1,4 @@
+import 'package:docpost/main.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,7 +14,8 @@ class LoginPage extends StatelessWidget {
         title: Text(title),
         backgroundColor: const Color.fromARGB(255, 175, 211, 76),
       ),
-      body: Center(
+      body: Container(
+        margin: const EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -25,7 +27,31 @@ class LoginPage extends StatelessWidget {
                 filled: true,
                 hintText: 'Your email',
               ),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                icon: Icon(Icons.password),
+                fillColor: Color.fromARGB(221, 211, 211, 211),
+                filled: true,
+                hintText: 'Your password',
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(builder: (context) => const MyHomePage(title: title)));
+            //   },
+            //   child: Text("Login"),
+            // ),
           ],
         ),
       ),
