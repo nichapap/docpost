@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'emptyScreen.dart';
+import 'articles.dart';
 import 'contacts.dart';
 
 void main() {
@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
   final screens = [
-    const EmptyScreen(title: 'EmptyScreen'),
+    const Articles(),
     const Contacts(),
   ];
 
