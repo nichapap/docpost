@@ -14,15 +14,20 @@ class LoginTextField extends StatelessWidget {
   final String hint;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.only(left: 10),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+      ),
       height: height,
       child: TextField(
+        autocorrect: false,
+        enableSuggestions: false,
         decoration: InputDecoration(
-          border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20))),
+          border: InputBorder.none,
           icon: icon,
-          fillColor: color,
-          filled: true,
           hintText: hint,
         ),
       ),
