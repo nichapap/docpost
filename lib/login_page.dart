@@ -1,3 +1,4 @@
+import 'package:docpost/login_box.dart';
 import 'package:docpost/main.dart';
 import 'package:flutter/material.dart';
 
@@ -43,13 +44,14 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-
+            LoginTextField(
+              height: 100,
+              icon: Icon(Icons.person),
+              color: Colors.teal,
+            )
             // ElevatedButton(
             //   onPressed: () {
-            //     Navigator.push(
-            //       context,
-            //       MaterialPageRoute(builder: (context) => const MyHomePage(title: title)));
-            //   },
+            //     Navigator.pop(context,);
             //   child: Text("Login"),
             // ),
           ],
