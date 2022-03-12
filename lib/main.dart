@@ -1,29 +1,36 @@
+import 'package:docpost/landing_page.dart';
+import 'package:docpost/sign_in_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'articles.dart';
-import 'contacts.dart';
+import 'articles_page.dart';
+import 'contacts_page.dart';
+import 'add_post_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Docpost',
-      theme: ThemeData(
-        primarySwatch: Colors.lime,
-      ),
-      home: const MyHomePage(title: 'Docpost'),
-    );
+        title: 'Docpost',
+        theme: ThemeData(
+          primarySwatch: Colors.lime,
+        ),
+        // home: const MyHomePage(title: 'Docpost'),
+        home: const LandingPage());
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
+  const MyHomePage({Key key, this.title})
+      : super(key: key);
   final String title;
 
   @override
@@ -42,11 +49,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(widget.title),
+        title: const Text('Docpost'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.people),
+            tooltip: 'Login',
+            onPressed: () {},
+          )
+        ],
       ),
       body: screens[_currentIndex],
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPost()));
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
