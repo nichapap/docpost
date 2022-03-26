@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'search.dart';
+import 'package:docpost/widgets/search_bar.dart';
 
 class Articles extends StatelessWidget {
   const Articles({Key? key}) : super(key: key);
@@ -8,10 +8,10 @@ class Articles extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: const [
             Search(),
-            
           ],
         ),
       ),

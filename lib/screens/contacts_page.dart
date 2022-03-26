@@ -27,10 +27,9 @@ class Contacts extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   padding: const EdgeInsets.all(20),
                   child: const Text(
-                  'Email - \n\n docpost@gmail.com \n docpost@hotmail.com',
-                  style: TextStyle(fontSize: 20),
+                    'Email - \n\n docpost@gmail.com \n docpost@hotmail.com',
+                    style: TextStyle(fontSize: 20),
                   ),
-                
                 ),
               ],
             ),
