@@ -16,6 +16,7 @@ class MyAdminHomePage extends StatefulWidget {
       await FirebaseAuth.instance.signOut();
       onSignOut();
     } catch (e) {
+      // ignore: avoid_print
       print(e.toString());
     }
   }
@@ -52,7 +53,7 @@ class _MyAdminHomePageState extends State<MyAdminHomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           OutlinedButton(
-                            onPressed: () => {widget._signOut},
+                            onPressed: () => {widget._signOut()},
                             child: const Text(
                               'Sign Out',
                               style:

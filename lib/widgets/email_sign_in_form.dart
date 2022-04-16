@@ -29,6 +29,7 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
       }
       Navigator.of(context).pop();
     } catch (e) {
+      // ignore: avoid_print
       print(e.toString());
     }
   }

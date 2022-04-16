@@ -21,7 +21,9 @@ class AddUser extends StatelessWidget {
     Future<void> addUser() {
       return users
           .add({'full_name': fullName, 'company': company, 'age': age})
+          // ignore: avoid_print
           .then((value) => print("User Added"))
+          // ignore: avoid_print
           .catchError((error) => print("Failed to add user: $error"));
     }
 
