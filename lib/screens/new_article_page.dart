@@ -1,3 +1,4 @@
+import 'package:docpost/widgets/add_data.dart';
 import 'package:docpost/widgets/submit_button.dart';
 import 'package:docpost/widgets/new_article_box.dart';
 import 'package:docpost/widgets/new_article_image_box.dart';
@@ -19,43 +20,51 @@ class NewArticlePage extends StatelessWidget {
       body: Container(
         margin: const EdgeInsets.all(30),
         child: Column(
-          children: const <Widget>[
-            ArticleTextField(
-              hint: 'Date: 1st January 2022',
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            ArticleTextField(
-              hint: 'Title: Covid-19',
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            ArticleTextField(
-              height: 80,
-              hint: 'Detail: About Covid-19',
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            ArticleTextField(
-              hint: 'Credit: www.abc.com',
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 200,
-              child: ImagePickerBox(),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SubmitButton(),
+          children: <Widget>[
+            AddData(),
           ],
         ),
       ),
+      // body: Container(
+      //   margin: const EdgeInsets.all(30),
+      //   child: Column(
+      //     children: const <Widget>[
+      //       ArticleTextField(
+      //         hint: 'Date: 1st January 2022',
+      //       ),
+      //       SizedBox(
+      //         height: 10,
+      //       ),
+      //       ArticleTextField(
+      //         hint: 'Title: Covid-19',
+      //       ),
+      //       SizedBox(
+      //         height: 10,
+      //       ),
+      //       ArticleTextField(
+      //         height: 80,
+      //         hint: 'Detail: About Covid-19',
+      //       ),
+      //       SizedBox(
+      //         height: 10,
+      //       ),
+      //       ArticleTextField(
+      //         hint: 'Credit: www.abc.com',
+      //       ),
+      //       SizedBox(
+      //         height: 10,
+      //       ),
+      //       SizedBox(
+      //         height: 200,
+      //         child: ImagePickerBox(),
+      //       ),
+      //       SizedBox(
+      //         height: 10,
+      //       ),
+      //       SubmitButton(),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
