@@ -43,6 +43,15 @@ class _ArticlesState extends State<Articles> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My post'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            tooltip: 'Refresh Page',
+            onPressed: () {
+              fetchPosts();
+            }
+          ),
+        ],
         backgroundColor: Colors.orange[50],
       ),
       body: SingleChildScrollView(
