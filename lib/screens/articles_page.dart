@@ -17,7 +17,7 @@ class _ArticlesState extends State<Articles> {
   List<dynamic> posts = [];
 
   Future<void> fetchPosts() async {
-    final response = await Dio().get("https://odd-mole-44.loca.lt");
+    final response = await Dio().get("https://late-cups-count-125-25-109-38.loca.lt");
     setState(() {
       posts = response.data;
     });
@@ -25,7 +25,7 @@ class _ArticlesState extends State<Articles> {
 
   Future<void> searchPosts(String search) async {
     final response =
-        await Dio().get("https://odd-mole-44.loca.lt/?title=$search");
+        await Dio().get("https://late-cups-count-125-25-109-38.loca.lt/?title=$search");
     setState(() {
       posts = response.data;
     });
@@ -42,6 +42,7 @@ class _ArticlesState extends State<Articles> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My post'),
+        backgroundColor: Colors.orange[50],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -56,8 +57,21 @@ class _ArticlesState extends State<Articles> {
               ),
               for (final post in posts)
                 ListTile(
-                  title: Text(post['title']),
-                  subtitle: Text(post['time']),
+                  title: Text("Title:   " + post['title']),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 10,),
+                      Text("Time:   " +post['time']),
+                      const SizedBox(height: 15,),
+                      Text("Article:   " +post['article']),
+                      const SizedBox(height: 15,),
+                      Text("Credit:   " +post['credit']),
+                      const SizedBox(height: 20,),
+                      Text('____________________________________________________________'),
+                      const SizedBox(height: 20,),
+                    ],
+                  ),
                 ),
             ],
           ),
@@ -65,104 +79,4 @@ class _ArticlesState extends State<Articles> {
       ),
     );
   }
-  // late QuerySnapshot snapshotData;
-  // bool isExcecuted = false;
-  // @override
-  // Widget build(BuildContext context) {
-  //   Widget searchedData() {
-  //     return ListView.builder(
-  //       itemCount: snapshotData.docs.length,
-  //       itemBuilder: (BuildContext context, int index) {
-  //         return Card(
-  //           color: Colors.orange[50],
-  //           child: ListTile(
-  //             title: Text(
-  //               snapshotData.docs[index]['title'],
-  //               style:
-  //                   const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-  //             ),
-  //             subtitle: Column(
-  //               children: [
-  //                 Text(
-  //                   snapshotData.docs[index]['credit'],
-  //                   style: const TextStyle(
-  //                       fontWeight: FontWeight.bold, fontSize: 16),
-  //                 ),
-  //                 const FittedBox(),
-  //                 Text(
-  //                   snapshotData.docs[index]['article'],
-  //                   style: const TextStyle(
-  //                       fontWeight: FontWeight.bold, fontSize: 20),
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //         );
-  //       },
-  //     );
-  //   }
-
-  //   return Scaffold(
-  //     resizeToAvoidBottomInset: false,
-  //     appBar: AppBar(
-  //       actions: [
-  //         Row(
-  //           children: [
-  //             GetBuilder<DataController>(
-  //               init: DataController(),
-  //               builder: (val) {
-  //                 return IconButton(
-  //                   icon: const Icon(Icons.search),
-  //                   onPressed: () {
-  //                     val.queryData(searchController.text).then(
-  //                       (value) {
-  //                         snapshotData = value;
-  //                         setState(
-  //                           () {
-  //                             isExcecuted = true;
-  //                           },
-  //                         );
-  //                       },
-  //                     );
-  //                   },
-  //                 );
-  //               },
-  //             ),
-  //             IconButton(
-  //               icon: const Icon(Icons.clear),
-  //               onPressed: () {
-  //                 setState(
-  //                   () {
-  //                     isExcecuted = false;
-  //                   },
-  //                 );
-  //               },
-  //             )
-  //           ],
-  //         ),
-  //       ],
-  //       title: TextField(
-  //         style: const TextStyle(color: Colors.black),
-  //         decoration: const InputDecoration(
-  //           hintText: 'Search',
-  //           hintStyle: TextStyle(color: Colors.black),
-  //         ),
-  //         controller: searchController,
-  //       ),
-  //       backgroundColor: Colors.grey[50],
-  //     ),
-  //     body: isExcecuted
-  //         ? searchedData()
-  //         : SingleChildScrollView(
-  //             child: Column(
-  //               children: [
-  //                 Container(
-  //                   height: 450,
-  //                   // child: const PostInformation(),
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //   );
-  // }
 }
