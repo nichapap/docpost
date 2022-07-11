@@ -24,9 +24,10 @@ class _EmailSignInFormState extends State<EmailSignInForm> {
     try {
       if (_formType == EmailSignInFormType.signIn) {
         await widget.auth.signInWithEmailAndPassword(_email, _password);
-      } else {
-        await widget.auth.createUserWithEmailAndPassword(_email, _password);
-      }
+      } 
+      // else {
+      //   await widget.auth.createUserWithEmailAndPassword(_email, _password);
+      // }
       Navigator.of(context).pop();
     } catch (e) {
       // ignore: avoid_print

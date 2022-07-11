@@ -18,7 +18,7 @@ class _ArticlesState extends State<Articles> {
   List<dynamic> posts = [];
 
   Future<void> fetchPosts() async {
-    final response = await Dio().get("https://late-cups-count-125-25-109-38.loca.lt");
+    final response = await Dio().get("https://silent-coins-bathe-125-25-109-38.loca.lt");
     setState(() {
       posts = response.data;
     });
@@ -26,7 +26,7 @@ class _ArticlesState extends State<Articles> {
 
   Future<void> searchPosts(String search) async {
     final response =
-        await Dio().get("https://late-cups-count-125-25-109-38.loca.lt/?title=$search");
+        await Dio().get("https://silent-coins-bathe-125-25-109-38.loca.lt/?title=$search");
     setState(() {
       posts = response.data;
     });
