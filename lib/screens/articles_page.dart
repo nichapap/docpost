@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:docpost/widgets/search_bar.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class Articles extends StatefulWidget {
@@ -67,6 +68,11 @@ class _ArticlesState extends State<Articles> {
                       Text("Article:   " +post['article']),
                       const SizedBox(height: 15,),
                       Text("Credit:   " +post['credit']),
+                      const SizedBox(height: 15,),
+                      InkWell(
+                        child: Text('More Detail', style: TextStyle(color: Colors.blue),),
+                        onTap: () => launchUrlString(post['credit']),
+                      ),
                       const SizedBox(height: 20,),
                       Text('____________________________________________________________'),
                       const SizedBox(height: 20,),

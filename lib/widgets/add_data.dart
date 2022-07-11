@@ -76,7 +76,7 @@ class AddData extends StatelessWidget {
           maxLines: null,
           decoration: const InputDecoration(
             border: InputBorder.none,
-            hintText: 'Credit: www.abc.com',
+            hintText: 'Credit: https://www.abc.com',
           ),
           onChanged: (value) {
             credit = value;
